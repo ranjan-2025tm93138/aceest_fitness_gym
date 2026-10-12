@@ -30,8 +30,3 @@ HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
 
 # Start server using Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
-
-FROM jenkins/jenkins:lts
-USER root
-RUN apt-get update && apt-get install -y docker.io
-USER jenkins
